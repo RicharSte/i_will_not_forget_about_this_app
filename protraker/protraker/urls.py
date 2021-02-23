@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from todostuff.views import todo_add
+from todostuff.views import todoappView, addTodo, deleteTodo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todoapp/', todo_add),
+    path('todoapp/', todoappView),
+    path('addTodo/', addTodo),
+    path('deleteTodoItem/<int:item>/', deleteTodo),
 ]
