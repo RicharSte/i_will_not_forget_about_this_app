@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 from todostuff.views import todoappView, addTodo, deleteTodo
+from users.views import register 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todoapp/', todoappView),
+    path('todoapp/', todoappView, name='todo-home'),
     path('addTodo/', addTodo),
     path('deleteTodoItem/<int:item>/', deleteTodo),
+    path('register/', register, name='register'),
 ]
