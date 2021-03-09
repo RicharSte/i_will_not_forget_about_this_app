@@ -1,8 +1,5 @@
-{% if messages %}
-    {% for message in messages %}
-        {{ message }}
-    {% endfor %}
-{% endif %}
+{% extends 'base.html' %}
+{% block content %}
 <div>
     <form method="POST">
         {% csrf_token %}
@@ -10,3 +7,4 @@
         <button type="submit">Sign Up</button>
     </form>
 </div>
+{% endblock content %}
