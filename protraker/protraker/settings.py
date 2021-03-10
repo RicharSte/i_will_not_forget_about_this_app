@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     'todostuff.apps.TodostuffConfig',
     'users.apps.UsersConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'todo-home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
