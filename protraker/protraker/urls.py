@@ -22,7 +22,7 @@ from users.views import register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todoapp/', todoappView, name='todo-home'),
+    path('', todoappView, name='todo-home'),
     path('addTodo/', addTodo),
     path('deleteTodoItem/<int:item>/', deleteTodo),
     path('register/', register, name='register'),
