@@ -3,9 +3,19 @@ from django.http import HttpResponseRedirect
 
 from .models import Todo
 
+from datetime import date
+
 def todoappView(request):
-    all_todo_items = Todo.objects.filter(autor_id = request.user)
-    return render(request, 'todo/home.html', {'all_items':all_todo_items, 'title': 'Add some tasks'})
+    done_items = Todo.objects.filter(autor_id = request.user, done = 1, done_date = date.today())
+    undine_items = Todo.objects.filter(autor_id = request.user, done = 0)
+    
+    context = {
+        'done':done_items, 
+        'undone':undine_items,
+        'title': 'Add some tasks'
+    }
+    
+    return render(request, 'todo/home.html', context)
 
 def addTodo(request):
     text = request.POST['content']
@@ -14,8 +24,9 @@ def addTodo(request):
     new_todo.save()
     return redirect ('todo-home')
 
-def deleteTodo(request, item):
-    delete_item = Todo.objects.get(id= item)
-    delete_item.delete()
+def donetodo(request, item):
+    donetodo = Todo.objects.get(id= item)
+    donetodo.done = 1
+    donetodo.save()
     return redirect ('todo-home')
 

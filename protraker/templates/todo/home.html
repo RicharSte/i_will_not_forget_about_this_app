@@ -6,12 +6,18 @@
     <input type="submit" value="Add Todo Item">
 </form>
 <ul>
-    {% for item in all_items %}
+    {% for item in undone %}
     <li>{{ item.content }}
-    <form action="/deleteTodoItem/{{item.id}}/" method = "post">{% csrf_token %}
-            <input type="submit" value="Delete">
+    <form action="/donetodo/{{item.id}}/" method = "post">{% csrf_token %}
+            <button type="submit" class="btn btn-success">Done!</button>
     </form> 
     </li>
+    {% endfor %}
+</ul>
+<h2>Done Today!</h2>
+<ul>
+    {% for item in done %}
+    <li>{{ item.content }}</li>
     {% endfor %}
 </ul>
 {% endblock content %}

@@ -17,14 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from todostuff.views import todoappView, addTodo, deleteTodo
+from todostuff.views import todoappView, addTodo, donetodo
 from users.views import register 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', todoappView, name='todo-home'),
     path('addTodo/', addTodo),
-    path('deleteTodoItem/<int:item>/', deleteTodo),
+    path('donetodo/<int:item>/', donetodo),
     path('register/', register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
