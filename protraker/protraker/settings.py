@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     
     'todostuff.apps.TodostuffConfig',
     'users.apps.UsersConfig',
+    'statistic.apps.StatisticConfig',
+    
     'crispy_forms',
+    
 ]
 
 MIDDLEWARE = [
