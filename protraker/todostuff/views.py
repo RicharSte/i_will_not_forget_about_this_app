@@ -10,7 +10,7 @@ from datetime import date
 def todoappView(request):
     done_items = Todo.objects.filter(autor_id = request.user, done = 1, done_date = date.today())
     undine_items = Todo.objects.filter(autor_id = request.user, done = 0)
-    
+
     context = {
         'done':done_items, 
         'undone':undine_items,

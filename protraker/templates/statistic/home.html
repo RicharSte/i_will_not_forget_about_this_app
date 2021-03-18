@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Hello, {{user.username}}</h2>
+    <p class="fst-italic">Below are the statistics on how much you've done so far</p>
+    <div class="d-grid gap-3">
+        <div class="p-2 bg-light border">
+        <p>Today you have done {{ done_in_percentage }}% of your work</p>
+        {% if not undone_today == 0 %}
+            See all your undone tasks <a href="{% url 'todo-home' %}" class="link-info">here</a>
+        {% endif %}
+        </div>
+        <div class="p-2 bg-light border">Grid item 2</div>
+        <div class="p-2 bg-light border">Grid item 3</div>
+    </div>
+
+{% endblock content %}
