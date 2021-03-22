@@ -6,11 +6,11 @@
         <div class="p-2 bg-light border">
         <p>Today you have done {{ done_in_percentage }}% of your work</p>
         {% if not undone_today == 0 %}
-            See all your undone tasks <a href="{% url 'todo-home' %}" class="link-info">here</a>
+            See all your undone tasks or add new <a href="{% url 'todo-home' %}" class="link-info">here</a>
         {% endif %}
         </div>
-        <div class="p-2 bg-light border">Grid item 2</div>
-        <div class="p-2 bg-light border">Grid item 3</div>
+        <div class="p-2 bg-light border">In this week, you have done {{ week_work }} tasks. Congratulations!</div>
+        <div class="p-2 bg-light border">In this month, you have done {{ month }} tasks. Congratulations!</div>
     </div>
 
 {% endblock content %}
