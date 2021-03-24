@@ -23,11 +23,11 @@ from statistic.views import day_statistic
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', todoappView, name='todo-home'),
-    path('addTodo/', addTodo),
-    path('donetodo/<int:item>/', donetodo),
-    path('register/', register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
-    path('my-statistic/', day_statistic, name='statistic'),
+    path('', todoappView, name='todo-home'), #базовая страница
+    path('addTodo/', addTodo),#нужно для добавления задачи
+    path('donetodo/<int:item>/', donetodo), #нужно для удаления задачи
+    path('register/', register, name='register'),#для регистрации пользователя
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),#для логина пользователя
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),#для того,чтобы выйти из учетной записи
+    path('my-statistic/', day_statistic, name='statistic'),#чтобы посмотреть статистику
 ]

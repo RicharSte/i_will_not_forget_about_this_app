@@ -4,7 +4,9 @@ from django.contrib.auth.decorators import login_required
 from todostuff.models import Todo
 
 from datetime import date, timedelta
-
+"""
+Эти модули отвечают за всю статистику, которую видет пользователь. Мы считаем, сколько пользователь сделал за сегодня, сколько ему ещё осталось, сколько было сделанно за неделю и за месяц.
+"""
 @login_required(login_url='login')
 def day_statistic(request):
     undone_today = len(Todo.objects.filter(autor_id = request.user, done = 0, done_date = date.today()))

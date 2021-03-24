@@ -39,10 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    #мои добавленные приложения
     'todostuff.apps.TodostuffConfig',
     'users.apps.UsersConfig',
     'statistic.apps.StatisticConfig',
-    
+    #нужно для красивой обработки форм
     'crispy_forms',
     
 ]
